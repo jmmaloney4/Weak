@@ -19,30 +19,22 @@ public class Weak<T: AnyObject>: Equatable {
 
     public var isNil: Bool { return value == nil }
 
-    /// Returns a Boolean value indicating whether two values are equal.
-    ///
-    /// Equality is the inverse of inequality. For any values `a` and `b`,
-    /// `a == b` implies that `a != b` is `false`.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
     public static func == (lhs: Weak<T>, rhs: Weak<T>) -> Bool {
         return lhs.value === rhs.value
+    }
+
+    public static func == (lhs: Weak<T>, rhs: T) -> Bool {
+        return lhs.value === rhs
     }
 }
 
 extension Weak where T: Equatable {
-    /// Returns a Boolean value indicating whether two values are equal.
-    ///
-    /// Equality is the inverse of inequality. For any values `a` and `b`,
-    /// `a == b` implies that `a != b` is `false`.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
     public static func == (lhs: Weak<T>, rhs: Weak<T>) -> Bool {
         return lhs.value == rhs.value
+    }
+
+    public static func == (lhs: Weak<T>, rhs: T) -> Bool {
+        return lhs.value == rhs
     }
 }
 
