@@ -47,7 +47,8 @@ extension Weak where T: Equatable {
 }
 
 extension Array where Element: Weak<AnyObject> {
-    mutating func reap () {
-        self = self.filter({ !$0.isNil })
+    /// Returns an array that has removed all elements that are `nil`.
+    func reap() -> Array {
+        return self.filter({ !$0.isNil })
     }
 }
