@@ -9,6 +9,14 @@ import Foundation
 public class Weak<T: AnyObject>: Equatable {
     public weak var value: T?
 
+    public var description: String {
+        if value != nil {
+            return "\(value!)"
+        } else {
+            return "nil"
+        }
+    }
+    
     public init() {
         value = nil
     }
