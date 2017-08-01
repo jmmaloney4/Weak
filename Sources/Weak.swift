@@ -6,7 +6,7 @@
 
 import Foundation
 
-public class Weak<T: AnyObject>: Equatable {
+public class Weak<T: AnyObject>: Equatable, CustomStringConvertible {
     public weak var value: T?
 
     public var description: String {
