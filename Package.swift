@@ -8,5 +8,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "Weak"
+    name: "Weak",
+    products: [
+        .library(name: "Weak", targets: ["Weak"]),
+    ],
+    dependencies: [],
+    targets: [
+        .target(name: "Weak", path: "Sources")
+    ]
 )
