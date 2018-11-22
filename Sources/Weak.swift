@@ -6,6 +6,8 @@
 
 import Foundation
 
+postfix operator .?
+
 public class Weak<T: AnyObject>: Equatable, CustomStringConvertible {
     public weak var value: T?
 
@@ -33,6 +35,10 @@ public class Weak<T: AnyObject>: Equatable, CustomStringConvertible {
 
     public static func == (lhs: Weak<T>, rhs: T) -> Bool {
         return lhs.value === rhs
+    }
+    
+    public static postfix func .? (weak: Weak<T>) -> T? {
+        return weak.value
     }
 }
 
