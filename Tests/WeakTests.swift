@@ -25,6 +25,7 @@ class WeakTests: XCTestCase {
         var arr = [Weak<DispatchQueue>]()
         arr.append(Weak())
         print(arr[0].?)
+        print(arr[0].!)
     }
 
     func testPerformanceExample() {
