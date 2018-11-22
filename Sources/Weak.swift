@@ -9,7 +9,8 @@ import Foundation
 postfix operator .?
 postfix operator .!
 
-public class Weak<T: AnyObject>: Equatable, CustomStringConvertible {
+public class Weak<T: AnyObject>: Equatable, CustomStringConvertible, ExpressibleByNilLiteral {
+    
     public weak var value: T?
 
     public var description: String {
@@ -21,6 +22,10 @@ public class Weak<T: AnyObject>: Equatable, CustomStringConvertible {
     }
     
     public init() {
+        value = nil
+    }
+    
+    public required init(nilLiteral: ()) {
         value = nil
     }
 
