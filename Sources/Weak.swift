@@ -62,6 +62,12 @@ extension Weak where T: Equatable {
     }
 }
 
+extension Weak: Hashable where T: Hashable {
+    public var hashValue: Int {
+        return self.value!.hashValue
+    }
+}
+
 extension Array where Element: Weak<AnyObject> {
     /// Returns an array that has removed all elements that are `nil`.
     func reap() -> Array {
