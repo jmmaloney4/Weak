@@ -63,8 +63,8 @@ extension Weak where T: Equatable {
 }
 
 extension Weak: Hashable where T: Hashable {
-    public var hashValue: Int {
-        return self.value!.hashValue
+    public func hash(into hasher: inout Hasher) {
+        return self.value!.hash(into: &hasher)
     }
 }
 
